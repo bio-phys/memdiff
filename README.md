@@ -7,7 +7,7 @@ Not yet tested for Python 3.
 
 ## Usage
 The package contains three files:
- - memdiff.py: implementation of correction formulas from the point-particle method (1,2) as well as the flat-box approximation (1).
+ - memdiff.py: implementation of the Oseen corrections for transmembrane and monotopic components (1,2) as well as the flat-box approximation (1).
  - memdiff_immersed_boundary.py: implementation of correction formulas from the immersed-boundary method (3).
  - analysis_diffusion.py: a framework to analyse data sets of diffusion coefficients obtained from different box geometries (2).
 Import them into your python code via import <name>.
