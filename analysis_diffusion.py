@@ -90,7 +90,7 @@ def dinf_iter( data_sets, eta_m_guess = 3e-11, d0_guess = 6.0, epsilon = 0.01e-1
 class Dataset:
     """A data set and all its properties"""
     
-    def __init__(self, name, data_file, temperature = 300, mono = False, label = None, eta_f = 9.6e-04, eta_m_range = [2e-11,7e-11], epsilon = 0.01e-11, b = 1.0e+08, approx = False ):
+    def __init__(self, name, data_file, temperature = 300, mono = False, label = None, eta_f = 10.2e-04, eta_m_range = [2e-11,7e-11], epsilon = 0.01e-11, b = 2.9e6, approx = False ):
         
         self.name        = name
         self.data        = np.transpose(np.loadtxt( data_file ))
@@ -126,15 +126,16 @@ class Dataset:
             self.d_inf_points = np.array([mdv.d0_approximation(dpbc,self.temperature,self.eta_f,self.eta_m_opt,self.edge[i],self.height[i]) for i, dpbc in enumerate(self.dc)])
         else:
             if self.mono:
-                self.d_inf_points = np.array([mdv.d0_mono(dpbc,self.temperature,self.eta_f,self.eta_m_opt,self.b,self.edge[i],self.height[i],100) for i, dpbc in enumerate(self.dc)])
+                self.d_inf_points = np.array([mdv.d0_mono(dpbc,self.temperature,self.eta_f,self.eta_m_opt,self.b,self.edge[i],self.height[i],40) for i, dpbc in enumerate(self.dc)])
             else:
-                self.d_inf_points = np.array([mdv.d0(dpbc,self.temperature,self.eta_f,self.eta_m_opt,self.edge[i],self.height[i],100) for i, dpbc in enumerate(self.dc)])
+                self.d_inf_points = np.array([mdv.d0(dpbc,self.temperature,self.eta_f,self.eta_m_opt,self.edge[i],self.height[i],40) for i, dpbc in enumerate(self.dc)])
         
         # Set the flag for iterative calculation
         self.calculated_d_inf_iteratively = True
         self.calculated_d_inf_by_deviations = False
         
         
+    
     # PRINTING AND PLOTTING ROUTINES   
 
     def overview(self,approx=False):
