@@ -146,7 +146,6 @@ class Dataset:
             print "Finished analysis."
 
         print "D_inf  = %3.3f 10^-7 cm^/s"   % ( self.d_inf_opt*1e7  )
-#        print "std(D) = %3.3f 10^-7 cm^/s"   % ( self.stdev_opt*1e7  )
         print "eta_m  = %3.3f 10^-11 Pa*s*m" % ( self.eta_m_opt*1e11 )
         print "L_SD   = %3.3f nm"            % ( self.l_sd_opt *1e9  )
     
@@ -166,7 +165,7 @@ class Dataset:
             xlb = r'$L_{x,y}\;[\mathrm{nm}]$'
 
         # Make a plot
-        fig, ax = plt.subplots(1, 1, figsize=plt.figaspect(.75)*1.0, dpi=300)
+        fig, ax = plt.subplots(1, 1, figsize=plt.figaspect(.75)*1.0) #, dpi=300)
         plotsc = 1e7 # scale for the plot
 
         # Simulation values
