@@ -1,5 +1,5 @@
 # memdiff
-Implementation of corrections for diffusion coefficients in membrane simulations.
+Corrections for diffusion coefficients in membrane simulations.
 
 ## Requirements
 Python 2.7 and packages numpy, scipy, sys, os, pickle. 
@@ -11,6 +11,8 @@ The package contains three files:
  - memdiff_immersed_boundary.py: implementation of correction formulas from the immersed-boundary method (3).
  - analysis_diffusion.py: a framework to analyse data sets of diffusion coefficients obtained from different box geometries (2).
 Import them into your python code via import <name>.
+
+An example IPython notebook is provided that uses data from a simulation of a carbon nanotube porin in a POPC/DOPC membrane.
 
 ## Literature
  - (1) M. Vögele and G. Hummer: Divergent Diffusion Coefficients in Simulations of Fluids and Lipid Membranes; J. Phys. Chem. B, 2016, 120 (33), pp 8722–8732; DOI: 10.1021/acs.jpcb.6b05102
