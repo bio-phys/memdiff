@@ -12,7 +12,7 @@ The package contains three files:
  - analysis_diffusion.py: a framework to analyse data sets of diffusion coefficients obtained from different box geometries (2).
 Import them into your python code via import <name>.
 
-An example IPython notebook is provided that uses data from a simulation of a carbon nanotube porin in a POPC/DOPC membrane.
+An example Jupyter notebook is provided that uses data from a simulation of a carbon nanotube porin in a POPC/DOPC membrane.
 
 ## Literature
  - (1) M. Vögele and G. Hummer: Divergent Diffusion Coefficients in Simulations of Fluids and Lipid Membranes; J. Phys. Chem. B, 2016, 120 (33), pp 8722–8732; DOI: 10.1021/acs.jpcb.6b05102
