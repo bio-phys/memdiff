@@ -14,6 +14,10 @@ Import them into your python code via import <name>.
 
 An example Jupyter notebook is provided that uses data from a simulation of a carbon nanotube porin in a POPC/DOPC membrane.
 
+## Which correction formula should I use?
+
+For an overview, see this ![flow chart](membrane-diffusion-flowchart.pdf). Details and tests are described in the respective papers (1,2).
+
 ## Literature
  - (1) M. Vögele and G. Hummer: Divergent Diffusion Coefficients in Simulations of Fluids and Lipid Membranes; J. Phys. Chem. B, 2016, 120 (33), pp 8722–8732; DOI: 10.1021/acs.jpcb.6b05102
  - (2) M. Vögele, J. Köfinger, and G. Hummer: Hydrodynamics of Diffusion in Lipid Membrane Simulations, Phys. Rev. Lett. 2018, 120, 268104. DOI: 10.1103/PhysRevLett.120.268104 (preprint available at arXiv:1803.04714)
