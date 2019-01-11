@@ -16,7 +16,11 @@ An example Jupyter notebook is provided that uses data from a simulation of a ca
 
 ## Which correction formula should I use?
 
-For an overview, see this ![flow chart](membrane-diffusion-flowchart.pdf). Details and tests are described in the respective papers (1,2).
+![flow chart](membrane-diffusion-flowchart.png): 
+
+A PDF version of the flow chart is available ![here](membrane-diffusion-flowchart.pdf).
+
+Details and tests are described in our papers (1,2).
 
 ## Literature
  - (1) M. Vögele and G. Hummer: Divergent Diffusion Coefficients in Simulations of Fluids and Lipid Membranes; J. Phys. Chem. B, 2016, 120 (33), pp 8722–8732; DOI: 10.1021/acs.jpcb.6b05102
