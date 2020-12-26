@@ -2,8 +2,7 @@
 Corrections for diffusion coefficients in membrane simulations.
 
 ## Requirements
-Python 2.7 and packages numpy, scipy, sys, os, pickle. 
-Not yet tested for Python 3.
+Python 3 and packages numpy, scipy, sys, os, pickle. 
 
 ## Usage
 The package contains three files:
