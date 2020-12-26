@@ -1,4 +1,4 @@
-# memdiff
+# MemDiff
 Corrections for diffusion coefficients in membrane simulations.
 
 ## Requirements
@@ -16,7 +16,7 @@ An example Jupyter notebook is provided that uses data from a simulation of a ca
 
 ## Which correction formula should I use?
 
-![flow chart](membrane-diffusion-flowchart.png): 
+![flow chart](membrane-diffusion-flowchart.png)
 
 A PDF version of the flow chart is available ![here](membrane-diffusion-flowchart.pdf).
 
