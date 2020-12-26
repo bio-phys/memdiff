@@ -145,7 +145,7 @@ class Dataset:
             self.find_d_inf()
             print("Finished analysis.")
 
-        print("D_inf  = %3.3f 10^-7 cm^/s"  %(self.d_inf_opt*1e7 ))
+        print("D_inf  = %3.3f 10^-7 cm^2/s"  %(self.d_inf_opt*1e7 ))
         print("eta_m  = %3.3f 10^-11 Pa*s*m"%(self.eta_m_opt*1e11))
         print("L_SD   = %3.3f nm"           %(self.l_sd_opt *1e9 ))
     
