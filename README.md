@@ -1,5 +1,7 @@
-# MemDiff
-Corrections for diffusion coefficients in membrane simulations.
+![flow chart](MemDiff-Picture.png)
+
+Lateral diffusion cefficients in membrane simulations with periodic boundary conditions are subject to substantial hydrodynamic finite-size effects.
+You can use the implementation of the correction formulas here to obtain the unperturbed value from the values calculated in the simulation.
 
 ## Requirements
 Python 3 and packages numpy, scipy, sys, os, pickle. 
