@@ -1,50 +1,58 @@
-![flow chart](MemDiff-Picture.png)
+![flow chart](images/MemDiff-Picture.png)
 
 Lateral diffusion cefficients in membrane simulations with periodic boundary conditions are subject to substantial hydrodynamic finite-size effects.
 You can use the implementation of the correction formulas here to obtain the unperturbed value from the values calculated in the simulation.
 
-## Requirements
-Python 3 and packages numpy, scipy, sys, os, pickle. 
+## Installation
+
+If you want to keep MemDiff separate from your other Python code, create a new conda environment.
+
+    conda create --name memdiff python=3.7 pip numpy scipy matplotlib jupyter
+    conda activate memdiff
+ 
+Clone the repository and install MemDiff via pip.
+
+    git clone https://github.com/bio-phys/memdiff.git
+    cd memdiff
+    pip install -e . 
+
 
 ## Usage
-The package contains three files:
- - _memdiff.py_: implementation of the Oseen corrections for transmembrane and monotopic components (1,2) as well as the flat-box approximation (1).
- - _memdiff_immersed_boundary.py_: implementation of correction formulas from the immersed-boundary method (3).
- - _analysis_diffusion.py_: a framework to analyse data sets of diffusion coefficients obtained from different box geometries (2).
- 
-Import each file as a module into your python code:
 
-    # Functions for membrane diffusion
-    import memdiff as memd
-    import memdiff_immersed_boundary as mdib
-    # analysis routines
-    from analysis_diffusion import *
+The package contains three modules:
+ - _oseen_: implementation of the Oseen corrections for transmembrane and monotopic components (1,2) as well as the flat-box approximation (1).
+ - _immersed_: implementation of correction formulas from the immersed-boundary method (3).
+ - _analysis_: a framework to analyse data sets of diffusion coefficients obtained from different box geometries (2).
+ 
+Importing memdiff to your Python code will make all of them available
+
+    import memdiff
 
 To calculate, for example, the corrected diffusion coefficient according to the numerical Oseen correction (1,2), call
 
-    memd.d0(dpbc,T,eta_f,eta_m,l,h,imax)
+    memdiff.oseen.d0(dpbc,T,eta_f,eta_m,l,h,imax)
     
 with the following parameters:
 
-    dpbc:  uncorrected diffusion coefficient in m^2/s, 
+    dpbc:  uncorrected diffusion coefficient in cm^2/s, 
     T:     temperature in K
     eta_f: solvent viscosity in Pa*s
     eta_m: membrane surface viscosity in Pa*s*m
-    l:     width of the simulation box
-    h:     height of the simulation box
+    l:     width of the simulation box in nm
+    h:     height of the simulation box in nm
     imax:  maximal index of k-space vectors to take into account. 
 
 The higher imax, the more precise and the slower the calculation. 20 is usually a good compromise.
     
-There are analogous functions for the approximation formula and for the monotopic correction (see chart below).
+There are analogous functions for the approximation formula and for the monotopic correction. See the chart below to decide which one to use.
 
 An example Jupyter notebook is provided that uses data from a simulation of a carbon nanotube porin in a POPC/DOPC membrane to show the usage of the more advanced analysis functions. It shows how to fit the diffusion coefficient and the membrane viscosity from a series of simulations at different values of the box width.
 
 ## Which correction formula should I use?
 
-![flow chart](membrane-diffusion-flowchart.png)
+![flow chart](images/membrane-diffusion-flowchart.png)
 
-A PDF version of the flow chart is available ![here](membrane-diffusion-flowchart.pdf).
+A PDF version of the flow chart is available ![here](images/membrane-diffusion-flowchart.pdf).
 
 Details and tests are described in our papers (1,2).
 

@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 from matplotlib import colors
 
 # Functions for membrane diffusion
-import memdiff as mdv
-import memdiff_immersed_boundary as mdc
+import memdiff.oseen as mdv
+import memdiff.immersed as mdc
 
 # Natural constants
 kB     = 1.3806485*10**-23  # Boltzmann constant [J/K]
