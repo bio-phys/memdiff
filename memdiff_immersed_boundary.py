@@ -118,8 +118,8 @@ def d_pbc_mono(T,eta_f,eta_m,b,rad,beta,length,height,imax):
     br2   = (beta*rad)**2
     
     dpbc  = 0
-    for i in xrange(-imax,imax+1):
-        for j in xrange(-imax,imax+1):
+    for i in range(-imax,imax+1):
+        for j in range(-imax,imax+1):
             if i*i + j*j > 0:
                 dpbc += summand_mono(length,height,eta_f,eta_m,b,br2,i,j)
     

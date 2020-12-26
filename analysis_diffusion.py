@@ -41,7 +41,7 @@ def chi2(params,data_sets):
         # Initialize the estimated D
         d_est  = np.empty(len(ds.dc))
         # Loop through all data points ... 
-        for i in xrange(len(d_est)):
+        for i in range(len(d_est)):
             # ... and estimate D  
             if ds.approx: 
                 # ... approximately.
@@ -69,7 +69,7 @@ def dinf_iter( data_sets, eta_m_guess = 3e-11, d0_guess = 6.0, epsilon = 0.01e-1
         
     # build the list of initial guesses
     init_guess = [eta_m_guess]
-    for i in xrange(len(arguments)):
+    for i in range(len(arguments)):
         init_guess.append(d0_guess)
     
     # Minimize chi^2
@@ -141,21 +141,21 @@ class Dataset:
     def overview(self,approx=False):
 
         if not self.calculated_d_inf_iteratively:
-            print "Starting analysis."
+            print("Starting analysis.")
             self.find_d_inf()
-            print "Finished analysis."
+            print("Finished analysis.")
 
-        print "D_inf  = %3.3f 10^-7 cm^/s"   % ( self.d_inf_opt*1e7  )
-        print "eta_m  = %3.3f 10^-11 Pa*s*m" % ( self.eta_m_opt*1e11 )
-        print "L_SD   = %3.3f nm"            % ( self.l_sd_opt *1e9  )
+        print("D_inf  = %3.3f 10^-7 cm^/s"  %(self.d_inf_opt*1e7 ))
+        print("eta_m  = %3.3f 10^-11 Pa*s*m"%(self.eta_m_opt*1e11))
+        print("L_SD   = %3.3f nm"           %(self.l_sd_opt *1e9 ))
     
     
     def newvalues_plot(self,xaxis='edge',save=False,approx=False):
 
         if not self.calculated_d_inf_iteratively:
-            print "Starting analysis."
+            print("Starting analysis.")
             self.find_d_inf()
-            print "Finished analysis." 
+            print("Finished analysis.")
 
         if xaxis == 'height':
             xax = self.height

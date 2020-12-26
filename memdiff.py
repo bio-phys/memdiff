@@ -198,8 +198,8 @@ def deltaT_mono(length,height,imax,lsd,bstar):
 
         # Calculate the contribution of the sum
         deltaT_sum = 0.0
-        for ix in xrange(-imax,imax+1):
-            for iy in xrange(-imax,imax+1):
+        for ix in range(-imax,imax+1):
+            for iy in range(-imax,imax+1):
                 ii = ix**2 + iy**2
                 if not ii == 0 and ii <= imax**2:
                     deltaT_sum += summand_mono(length,height,ix,iy,sig,lsd,bstar)
