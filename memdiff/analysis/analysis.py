@@ -88,7 +88,9 @@ def dinf_iter( data_sets, eta_m_guess = 3e-11, d0_guess = 6.0, epsilon = 0.01e-1
 
 
 class Dataset:
-    """A data set and all its properties"""
+    """
+    A data set and all its properties
+    """
     
     def __init__(self, name, data_file, temperature = 300, mono = False, label = None, eta_f = 10.2e-04, eta_m_range = [2e-11,7e-11], epsilon = 0.01e-11, b = 2.9e6, approx = False ):
         
