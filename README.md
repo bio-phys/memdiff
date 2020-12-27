@@ -3,6 +3,14 @@
 Lateral diffusion cefficients in membrane simulations with periodic boundary conditions are subject to substantial hydrodynamic finite-size effects.
 You can use the implementation of the correction formulas here to obtain the unperturbed value from the values calculated in the simulation.
 
+The effect and the corrections are described here: 
+
+> M. Vögele, J. Köfinger, and G. Hummer: Hydrodynamics of Diffusion in Lipid Membrane Simulations, [Phys. Rev. Lett. 2018, 120 (26)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.120.268104) 
+> (preprint available at [arXiv:1803.04714](https://arxiv.org/abs/1803.04714))
+
+Please cite this paper if the code here is helpful in your work, and the respective references for particular methods.
+
+
 ## Installation
 
 If you want to keep MemDiff separate from your other Python code, create a new conda environment.
@@ -34,13 +42,13 @@ To calculate, for example, the corrected diffusion coefficient according to the 
     
 with the following parameters:
 
-    dpbc:  uncorrected diffusion coefficient in cm^2/s, 
+    dpbc:  uncorrected diffusion coefficient in cm^2/s 
     T:     temperature in K
     eta_f: solvent viscosity in Pa*s
     eta_m: membrane surface viscosity in Pa*s*m
     l:     width of the simulation box in nm
     h:     height of the simulation box in nm
-    imax:  maximal index of k-space vectors to take into account. 
+    imax:  maximal index of k-space vectors to take into account 
 
 The higher imax, the more precise and the slower the calculation. 20 is usually a good compromise.
     
