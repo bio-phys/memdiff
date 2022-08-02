@@ -64,8 +64,8 @@ def deltaT(length,height,imax,lsd):
     for sig in sigma:
         # Calculate the contribution of the sum
         deltaT_sum = 0.0
-        for ix in xrange(-imax,imax+1):
-            for iy in xrange(-imax,imax+1):
+        for ix in range(-imax,imax+1):
+            for iy in range(-imax,imax+1):
                 ii = ix**2 + iy**2
                 if not ii == 0 and ii <= imax**2:
                     deltaT_sum += _summand(length,height,ix,iy,sig,lsd)
@@ -244,7 +244,7 @@ def deltaT_mono(length,height,imax,lsd,bstar):
                     deltaT_sum += _summand_mono(length,height,ix,iy,sig,lsd,bstar)
         deltaT_sum /= length**2
         # Calculate the contribution of the integral
-        deltaT_int = integral_mono(sig,lsd,bstar)
+        deltaT_int = _integral_mono(sig,lsd,bstar)
         # Calculate deltaT for the respective sigma
         deltaT_sigma.append(deltaT_sum - deltaT_int)
     # Extrapolate to the limit of sigma -> infinity
